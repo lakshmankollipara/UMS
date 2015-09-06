@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+<hr>
+<center>
+<h1>CANCELATION</h1>
+</center>
+<hr>
+<br>
+<center>
+Passenger Name:
+<input type="text" name="pname">
+<br>
+<br>
+&nbsp;
+Ticket Number:
+
+<input type="text" name="tno">
+<br>
+<br>
+<input type="submit" name="cancel" value="Cancel">
+</center>
+<?php
+mysql_connect("localhost","root","") or die("could not connect to data base");
+mysql_select_db("dbn");
+if(!empty($_REQUEST['cancel']))
+{
+$q="delete from passengerlist where passname='".$_REQUEST['pname']."' and tno='".$_REQUEST['tno']."'";
+$res=mysql_query($q);
+$w="select * from passengerlist where passname='".$_REQUEST['pname']."' and tno='".$_REQUEST['tno']."'";
+$res1=mysql_query($w);
+$n=mysql_num_rows($res1);
+$row = mysql_fetch_row($res1);
+f($n==0)
+{
+$_SESSION['name']=$_REQUEST['username'];
+$_SESSION['id']= $row['0'];
+echo "cancellation done";
+header("Location:CANCELATION.html?err=done");
+}
+else
+{
+echo "invalid ticket number";
+header("Location:CANCELATION.html?err=invalid ticket no");
+}
+}
+?> 
+</body>
+</html>

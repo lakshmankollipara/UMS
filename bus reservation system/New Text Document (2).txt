@@ -1,0 +1,48 @@
+<?php
+mysql_connect("localhost","root","") or die("could not connect to data base");
+mysql_select_db("dbn");
+$fl=$_REQUEST['tno'];
+$r=$_REQUEST['acno']; 
+$w="select * from passdetail where ticno='$fl' and acno='r'";
+$res1=mysql_query($w);
+$n=@mysql_num_rows($res1);
+$row = @mysql_fetch_array($res1);
+if(n!=0)
+{
+$s1=$row['seats'];
+$s2=$row['fr'];
+$s3=$row['tol'];
+$s4=$row['dat'];
+$s5=$row['mon'];
+$s6=$row['yr'];
+$s7=$row['busname'];
+$s8=$row['fare'];
+$s9=$row['ticno'];
+$s10=$row['acno'];
+$w1=mysql_query("select * from bus  where fr='$s2' and tol='$s3' and dat='$s4' and mon='$s5' and busty='$s7'");
+$res11=mysql_query($w1);
+$n1=@mysql_num_rows($res11);
+$row1= @mysql_fetch_array($res11);
+if(n1!=0)
+{
+$s11=$row1['seats'];
+$s11=$s11+$s1;
+$q="delete from passengerlist where ticno='$fl' and tno='r' ";
+$res=mysql_query($q);
+$w1="update bus set seats='$s11' where fr='$s2' and tol='$s3' and dat='$s4' and mon='$s5' and busty='$s7'";
+$res2=mysql_query($w1);
+$n1=mysql_num_rows($res2);
+$row1 = mysql_fetch_row($res2);
+if($n)
+{
+echo "cancellation done";
+echo "money refunded to account no ";
+echo "$s10"; 
+}
+else 
+{
+echo "invalid ticket number";
+}
+}
+}
+?> 

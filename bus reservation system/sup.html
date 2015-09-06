@@ -1,0 +1,109 @@
+<HTML>
+<HEAD>
+<TITLE>SIGN UP</TITLE>
+
+<BASE TARGET=_blank>
+</HEAD>
+</HEAD>
+<BODY >
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["myForm"]["Name"].value
+var a=document.forms["myForm"]["password"].value
+var b=document.forms["myForm"]["fname"].value
+var c=document.forms["myForm"]["lname"].value
+var d=document.forms["myForm"]["age"].value
+var e=document.forms["myForm"]["sex"].value
+var f=document.forms["myForm"]["pemail"].value
+if ((x==null || x=="")||(a==null || a=="")||(b==null || b=="")||(c==null || c=="")||(d==null || d=="")||(f==null))
+ {
+  alert("you didnot filled all the fields so please fill all fields");
+  return false;
+  }
+}
+</script>
+<form name="myForm" action="#" onsubmit="return validateForm()"
+	method="post"
+	target=_blank>
+<fieldset>
+<legend>
+Welcome to Sign up page
+</legend>
+<fieldset>
+<legend align="center">
+please fill all fields given here
+</legend>
+Username:<input  type="text"
+	name="Name"
+	size="25"
+	maxlength="50"><br>
+
+Password: <input  type="password"
+	name="password" value=""size="25" maxlength=10><br>
+
+Firstname:<input       type="text"
+	name="fname"
+	value=""
+	size="25"
+	maxlength="50"><br>
+
+Lastname:<input       type="text"
+	name="lname"
+	value=""
+	size="25"
+	maxlength="50"><br>
+
+Age:<input       type="number"
+	name="age"
+	value=""
+	size="5"
+	maxlength="3"> <br>
+Gender<br>
+<input       type="radio"
+	name="sex"
+	value="male">Male<br>
+<input       type="radio"
+	name="sex"
+	value="female">Female<br>
+
+Qualification:<br>
+<input       type="radio"
+	name="a">Student<br>
+<input       type="radio"
+	name="a">Professional<br>
+<input       type="radio"
+	name="a">Others<br>
+Enter valid mail address<br>
+Primary email:<input       type="text"
+	name="pemail"
+	size="40"
+	maxlength="50"><br>
+<br>
+
+<input       type="submit"
+	name="submit"
+	value="register"><br>
+<input	type="reset" name="reset"
+	value="reset">
+</fieldset>
+</fieldset>
+<br><a href="toc.html">Terms and conditions</a>
+</form>
+<?php
+
+mysql_connect("localhost","root","") or die("could not connect to data base");
+mysql_select_db("dbn");
+if(!empty($_REQUEST['button']))
+{	
+	$q="INSERT INTO userdetail VALUES('".$_REQUEST['username']."', '".$_REQUEST['password']."','".$_REQUEST['fname']."', '".$_REQUEST['lname']."','".$_REQUEST['age']."','".$_REQUEST['pemail']."')";
+$r="INSERT INTO userinfo VALUES('".$_REQUEST['username']."', '".$_REQUEST['password']."','".$_REQUEST['fname']."');
+	echo "Entered"; 
+	
+	mysql_query($q) or die(mysql_error());
+	mysql_query($s) or die(mysql_error());
+
+}
+?>
+</BODY>
+</HTML>

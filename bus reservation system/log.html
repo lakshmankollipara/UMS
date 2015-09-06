@@ -1,0 +1,83 @@
+<HTML>
+<HEAD>
+<style type="text/css">
+a.one:link {color:#ff0000;}
+a.one:visited {color:#0000ff;}
+a.one:hover {font-size:110%;}
+</style>
+<TITLE>
+LOGIN
+</TITLE>
+<script type="text/javascript">
+
+function validateForm()
+{
+var x=document.forms["myForm"]["username"].value
+var y=document.forms["myForm"]["password"].value
+if ((x==null || x=="")||(y==null || y==""))
+  {
+  alert("User name and password must be filled out");
+  return false;
+  }
+}
+</script>
+</HEAD>
+<BODY background="eau.jpg">
+<form name="myForm" action="log123.php" onsubmit="return validateForm()" method="post"  >
+<marquee behaviour="alternate"><font face="comic sans MS"color="black"><h4>OBR Welcomes you</h4></font></marquee>
+<hr>
+
+<fieldset >
+<legend align="center">
+<font color="black">AUTHENTICATION</font>
+</legend>
+<p align="center">
+<font color="black">
+USERNAME :<input  type="text"
+	name="username"
+	value=""
+	size="25"
+	maxlength="50">
+<br>
+<br>
+PASSWORD :<input       type="password"
+	name="password"
+	value=""
+	size="25"
+	maxlength="25">
+<br><br>	
+<input       type="submit"
+	name="submit"
+	value="signin">
+<input       type="reset"
+	name="reset"
+	value="reset"><br>
+</p>
+
+<br><a class="one" href="4frgt.html" ><h2><font color="black">Forgot Password??</font></h2></a>
+</font>
+</fieldset><hr>
+</form>
+</BODY>
+<?php
+mysql_connect("localhost","root","") or die("could not connect to data base");
+mysql_select_db("dbn");
+if(!empty($_REQUEST['submit']))
+{
+$q="select * from userinfo where username='".$_REQUEST['username']."' and password='".$_REQUEST['password']."'";
+$res=mysql_query($q);
+$n=mysql_num_rows($res);
+$row = mysql_fetch_row($res);
+if($n!=0)
+{
+$_SESSION['name']=$_REQUEST['username'];
+$_SESSION['id']= $row['0'];
+header("Location:onclicksignin.html");
+}
+else
+{
+echo '<center><br><br><br><br>Invalid Username and Password</center>';
+}
+}
+?>
+</HTML>

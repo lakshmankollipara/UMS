@@ -1,0 +1,170 @@
+<html>
+<head>
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["myform"]["seats"].value
+var dat=document.forms["myform"]["dat"].value
+var mon=document.forms["myform"]["mon"].value
+var acc=document.forms["myform"]["acc"].value
+var year=document.forms["myform"]["yr"].value
+while(year>0)
+{
+year=year-4;
+}
+if ((x<1)||(x>40))
+  {
+  alert("invalid seat details");
+  return false;
+  }
+else
+if(((mon=="Apr")||(mon=="Jun")||(mon=="Aug")||(mon=="Oct")||(mon=="Dec"))&&((dat==31)))
+{
+alert("Invalid date and month matching");
+return false;
+}else
+if((acc.length>8)||(acc.length<5))
+{
+alert("invalid account no");
+return false;
+}
+else
+if(((year==0)&&(mon=="Feb")&&((dat==30)||(dat==31)))||((year<0)&&(mon=="Feb")&&((dat==29)||(dat==30)||(dat==31))))
+{
+alert("invalid date")
+return false;
+}
+}
+</script></head>
+
+
+<body background="bbg.png">
+<form action="3.php" name="myform" onsubmit="return validateForm()" method="post">
+<hr>
+<center>
+<h2>BOOK THE TICKET</h2>
+</center>
+<hr>
+<table align="center">
+<tr>
+<td>
+FROM:
+<select name="fro">
+<option value="select">select</option>
+<option value="Bangalore">Bangalore</option>
+<option value="Chennai">Chennai</option>
+<option value="Trivandrum">Trivandrum</option>
+<option value="Mumbai">Mumbai</option>
+</select>
+</td></tr>
+<tr>
+<td>
+<br> 
+TO:
+&nbsp;
+&nbsp;
+&nbsp;
+<select name="gto">
+<option value="select">select</option>
+<option value="Bangalore">Bangalore</option>
+<option value="Chennai">Chennai</option>
+<option value="Trivandrum">Trivandrum</option>
+<option value="Mumbai">Mumbai</option>
+</select>
+</td>
+</tr>
+<tr><td>
+<br>
+DATE OF JOURNEY:<select name="dat">
+<option>Day</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+<option value="16">16</option>
+<option value="17">17</option>
+<option value="18">18</option>
+<option value="19">19</option>
+<option value="20">20</option>
+<option value="21">21</option>
+<option value="22">22</option>
+<option value="23">23</option>
+<option value="24">24</option>
+<option value="25">25</option>
+<option value="26">26</option>
+<option value="27">27</option>
+<option value="28">28</option>
+<option value="29">29</option>
+<option value="30">30</option>
+<option value="31">31</option>
+</select>
+<select name="mon">
+<option>Month</option>
+<option value="Jan">Jan</option>
+<option value="Feb">Feb</option>
+<option value="Mar">Mar</option>
+<option value="Apr">Apr</option>
+<option value="May">May</option>
+<option value="Jun">Jun</option>
+<option value="Jul">Jul</option>
+<option value="Aug">Aug</option>
+<option value="Sep">Sep</option>
+<option value="Oct">Oct</option>
+<option value="Nov">Nov</option>
+<option value="Dec">Dec</option>
+</select>
+<select name="yr">
+<option>Year</option>
+<option value="2012">2012</option>
+<option value="2013">2013</option>
+</select>
+</td></tr>
+<tr><td>
+<br>
+BUS TYPE:<select name="bus">
+<option value="select">Select</option>
+<option value="ACVOLVO">VOLVO-AC</option>
+<option value="SLVOLVO">VOLVO-SL</option>
+<option value="NONAC">NONAC</option>
+</select>
+</td></tr>
+<tr><td><br>
+NUMBER OF PASSENGERS:<input type="number" name="seats" value="1" maxlength="1" maxvalue="10"  minvalue="1">
+</td></tr>
+<tr>
+<td>
+<br>
+ACCNO:<input type="number" name="acc" >(**minimum 5 digit and maximum 10 digit)
+</td>
+</tr>
+<br>
+<tr>
+<td>
+<br>
+PROOF:<input type="text" name="proof" >
+</td>
+</tr>
+<tr>
+<td>
+<br>
+<center>
+<input type="submit" value="Book" name="book">
+</center>
+</td>
+</tr>
+</table>
+
+</form>
+</body>
+</html>

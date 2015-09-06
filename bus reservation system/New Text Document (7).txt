@@ -1,0 +1,17 @@
+<HTML>
+<HEAD>
+</HEAD>
+<BODY >
+<p>
+<br><br><br><br><br><br><br>
+<hr>
+<br><marquee><H2>u have sucessfully registered</H2></marquee>
+<br>
+<br>
+<br>
+<hr>
+<h2>click on continue to go to home page
+<a href="log.php">CONTINUE</a>
+</h2>
+</BODY>
+</HTML>

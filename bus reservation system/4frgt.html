@@ -1,0 +1,45 @@
+<html>
+<title>
+<h1>HELP</H1>
+</title>
+<body background="bbg.png">
+
+<script type="text/javascript">
+function validateForm()
+{
+var x=document.forms["myForm"]["username"].value
+var y=document.forms["myForm"]["email"].value
+
+if ((x==null || x=="")||(y==null || y==""))
+  {
+  alert("User name and email must be filled out");
+  return false;
+  }
+}
+</script>
+<form name="myForm" action="frgt23.php" method="post"  onsubmit="return validateForm()" target="you">
+<br>
+<br>
+<br>
+<br>
+<center>
+<font face="comic sans MS">
+<fieldset width="30" height="30">
+<legend>
+HELPS IN FINDING OUT THE PASSWORD
+</legend>
+<br>
+username:
+<INPUT TYPE="TEXT" NAME="username" value="" size="25">
+<br>
+<br>
+Email-ID:
+<input type="text" name="email" value="" size="25">
+<br>
+<br>
+<input type="submit" name="sub" value="submit"  >
+</fieldset>
+</font>
+</center>
+</body>
+</html>

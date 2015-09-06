@@ -1,0 +1,280 @@
+* { 
+padding : 0; 
+margin : 0; 
+} 
+body { 
+font-family : Arial, Helvetica, sans-serif; 
+font-size:14px;
+border:1px solid; 
+} 
+
+#wrapper { 
+margin-left:150px; 
+width : 1100px;  
+} 
+#header { 
+height: 50px;
+width:1350px;
+font-size:20px;
+text-align:center;
+background-color: #0066FF;
+float:center;
+margin-right:300px;
+} 
+
+#navigation { 
+float : left; 
+width : 1020px; 
+color : #333; 
+padding : 0 10px; 
+margin : 0 0 0 0; 
+background-color:#FFFFFF; 
+} 
+#navigation ul { 
+list-style : none; 
+padding : 0; 
+margin : 0; 
+display : block; 
+font-weight : bold; 
+float : right; 
+} 
+#navigation ul li { 
+list-style : none; 
+display : inline; 
+float : left; 
+width : 96px; 
+height : 35px; 
+padding : 0; 
+line-height : 35px; 
+font-size : 13px; 
+margin : 0 3px 0 3px; 
+} 
+#navigation ul li a { 
+height : 35px; 
+width : 96px; 
+float : left; 
+text-decoration : none; 
+padding : 0; 
+margin : 0; 
+color : #6c7b83; 
+text-align : center; 
+background : url(images/menu_bt.gif) no-repeat center 0%; 
+} 
+#navigation ul li a:hover { 
+height : 35px; 
+width : 96px; 
+text-decoration : none; 
+color : #68c2ef; 
+} 
+#navigation ul li a.current { 
+height : 35px; 
+width : 96px; 
+float : left; 
+text-decoration : none; 
+padding : 0; 
+margin : 0; 
+color : #66ccff; 
+background : url(images/menu_bt.gif) no-repeat center 0%; 
+} 
+#leftcolumn { 
+border:1px solid;
+color : #333; 
+margin : 0 0 0 0; 
+padding : 10px; 
+min-height : 350px; 
+width : 202px; 
+float : left; 
+} 
+.leftnav { 
+width : 195px; 
+height:800px;
+margin-top : 20px; 
+margin-left : 5px; 
+float:left;
+} 
+#content { 
+float : left; 
+color : #333; 
+margin-left:5px;
+height:900px;
+width : 800px; 
+display : inline; 
+text-align : justify;
+border:1px solid; 
+} 
+#content h1 { 
+color : #53a5ce; 
+font-size : 1.9em; 
+font-weight : lighter; 
+} 
+#content h2 { 
+color : #53a5ce; 
+font-size : 1.6em; 
+font-weight : lighter; 
+padding-top : 20px; 
+} 
+#conten { 
+float : left; 
+color : #333; 
+margin-left:75px;
+height:900px;
+width : 1000px; 
+display : inline; 
+text-align : justify;
+} 
+#conten h1 { 
+color : #53a5ce; 
+font-size : 1.9em; 
+font-weight : lighter; 
+} 
+#conten h2 { 
+color : #53a5ce; 
+font-size : 1.6em; 
+font-weight : lighter; 
+padding-top : 20px; 
+} 
+#conte { 
+float : left;  
+margin-left:50px;
+height:1000px;
+width : 1000px; 
+display : inline; 
+text-align : justify;
+} 
+#conte h1 { 
+font-size : 1.9em; 
+font-weight : lighter; 
+} 
+#conte h2 {  
+font-size : 1.6em; 
+font-weight : lighter; 
+padding-top : 20px; 
+} 
+#rightcolumn { 
+color : #333;  
+width : 200px; 
+float:left;
+height:1000px;
+border:1px solid;;
+margin-left:5px;
+} 
+#name {
+height:50px;
+width:190px;
+color:#666666;
+}
+#stuff{
+height:120px;
+}
+#block{
+height:auto;
+width:540px;
+border:1px dotted;
+}
+#bloc{
+height:30px;
+width:300px;
+border:1px dotted;
+margin-left:40px;
+}
+#image
+{
+background-image:url(images/img1.jpg);
+height : 100px;
+width:100px;
+margin:10px;
+align:center;
+}
+#search-submit {
+float:right;
+	width: 50px;
+	height: 30px;
+	color: #000000;
+	margin-right:200px;
+}
+.index{
+font-size:16px;
+color:#666666;
+align:center;
+margin-left:40px;
+
+}
+#frnd{
+align:left;
+margin-left:40px;
+}
+#search-text{
+	width: 500px;
+	height:auto;
+	border:1px solid #CCCCCC;
+	background: #FFFFFF;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #464032;
+	font-size:18px;
+	margin-left:20px;
+}
+#search-tex{
+float:left;
+	width: 100px;
+	height:18px;
+	background: #FFFFFF;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #464032;
+		font-size:12px;
+		margin-left:200px;
+	
+}
+#f{
+float:left;
+margin-left:50px;
+}
+#stuff{
+height:130px;
+}
+#block{
+height:30px;
+width:300px;
+border:1px dotted;
+margin-left:40px;
+}
+#bloc{
+height:30px;
+width:300px;
+border:1px dotted;
+margin-left:40px;
+}
+#image
+{
+background-image:url(images/img1.jpg);
+height : 100px;
+width:100px;
+margin:10px;
+align:center;
+}
+#web{
+height:200px;
+width:300px;
+align:left;
+margin-left:400px;
+border:1px solid #000000;
+}
+#show{
+align:right;
+font-size:16px;
+margin-left:30px;
+}
+#search-submit {
+float:right
+	width: 50px;
+	height: 30px;
+	color: #000000;
+	margin-right:70px;
+}
+#i{
+width:200px;
+height:200px;
+}
+#rep{
+float:left;
+margin-left:150px;
+}

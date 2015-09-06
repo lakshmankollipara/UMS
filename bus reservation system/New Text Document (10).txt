@@ -1,0 +1,23 @@
+<html>
+<body background="bbg.png">
+<?php
+mysql_connect("localhost","root","") or die("could not connect to data base");
+mysql_select_db("dbn");
+$q="select * from userdetail where username='".$_REQUEST['username']."' and pemail='".$_REQUEST['email']."' and sec='".$_REQUEST['ques']."' and ans='".$_REQUEST['ansa']."'";
+$res=mysql_query($q);
+$n=mysql_num_rows($res);
+$row = mysql_fetch_row($res);
+if($n==1)
+{
+$f1=mysql_result($res,0,"username");
+$f2=mysql_result($res,0,"sec");
+$f3=mysql_result($res,0,"pemail");
+$f4=mysql_result($res,0,"ans");
+echo "<br><br><br><br><br><br><center>PASSWORD:</center>";
+echo "$f4";
+}
+else
+echo 'invalid answer';
+?>
+</body>
+</html>

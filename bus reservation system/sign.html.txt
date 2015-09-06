@@ -1,0 +1,9 @@
+<html>
+<head>
+<title></title>
+</head>
+<frameset cols="60%,40%">
+<frame src="des.html"/>
+<frame src="log.html"/>
+</farmeset>
+</html>
